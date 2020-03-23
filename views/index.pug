@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  .main.container.text-xs-center
+    h3.display-3 Pen Down the beautiful moments of Life.
+    p.lead Write daily routine, tasks &#38; notes.
+    if !currentUser
+      a.btn.btn-info-outline.btn-lg(href='/register') Get Started for FREE
+
+

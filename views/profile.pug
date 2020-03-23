@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .main.container.clearfix
+    .col-md-12
+      .row
+        h3.display-4.py-4.mb-3 Welcome, #{name}! 
+        a.btn.btn-info-outline.btn-lg(href='/note') Create a Note
+      .row(style='margin-top:50px')
+      if posts
+        each post in posts
+          .card
+            #card-header.card-header(style='color:#000') #{post.title}
+            .card-body
+              h5.card-title(style='color:#000') #{post.publishDate}
+              p#card-text.card-text(style='color:#000') #{post.description}
+              a#profileDeleteButton.btn.btn-danger(name=post._id) Delete
+              a#profileUpdateButton.btn.btn-danger(name=post._id,style='margin-left:20px') Update
+              a#profileSaveButton.btn.btn-success(name=post._id,style='margin-left:20px;float:right') Save
+      else
+        p No POsts
+        
